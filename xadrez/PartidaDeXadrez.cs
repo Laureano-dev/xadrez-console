@@ -108,7 +108,7 @@ namespace xadrez
 
         public void validarPosicaoDeDestino(Posicao origem, Posicao destino)
         {
-            if (!tab.peca(origem).podeMoverPara(destino))
+            if (!tab.peca(origem).movimentoPossivel(destino))
             {
                 throw new TabuleiroException("Posição de destino inválida");
             }
@@ -126,7 +126,7 @@ namespace xadrez
             }
         }
 
-       
+
 
         public HashSet<Peca> pecasCapturadas(Cor cor)
         {
@@ -180,7 +180,7 @@ namespace xadrez
             return null;
         }
 
-       
+
 
         public bool estaEmXeque(Cor cor)
         {
@@ -230,9 +230,9 @@ namespace xadrez
                 }
             }
             return true;
-        }      
+        }
 
-       
+
 
         public void colocarNovaPeca(char coluna, int linha, Peca peca)
         {
@@ -248,6 +248,6 @@ namespace xadrez
 
             colocarNovaPeca('a', 8, new Rei(tab, Cor.Preta));
             colocarNovaPeca('b', 8, new Torre(tab, Cor.Preta));
-        }       
+        }
     }
 }
